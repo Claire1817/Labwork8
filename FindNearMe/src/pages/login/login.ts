@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Facebook } from '@ionic-native/facebook';
+import firebase from 'firebase';
 
 
 @IonicPage()
@@ -13,8 +15,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class LoginPage {
   
   userTest = {} as User;
+  userProfile: any = null;
   
-  constructor(private afAuth: AngularFireAuth, private nav: NavController, public navParams: NavParams) {
+  constructor(private afAuth: AngularFireAuth, private nav: NavController, public navParams: NavParams,  private facebook: Facebook) {
   }
 
   public createAccount() {
@@ -44,4 +47,21 @@ export class LoginPage {
     console.log(e);
   }
 }
+  public loginWithFacebook() {
+    this.facebook.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+        .credential(response.authResponse.accessToken);
+
+      firebase.auth().signInWithCredential(facebookCredential)
+        .then((success) => {
+          console.log("Firebase success: " + JSON.stringify(success));
+          this.userProfile = success;
+          this.nav.setRoot(TabsPage);
+        })
+        .catch((error) => {
+          console.log("Firebase failure: " + JSON.stringify(error));
+      });
+
+    }).catch((error) => { console.log("ERROR" + error) });
+  }
 }

@@ -15,6 +15,7 @@ import { LoginPage } from '../pages/login/login';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
+import { Facebook } from '@ionic-native/facebook'
 
 var firebaseConfig = {
   apiKey: "AIzaSyDHXPOevL35ZPZx25lrrhMTeMgpmlRv3Bs",
@@ -53,6 +54,7 @@ var firebaseConfig = {
   ],
   providers: [
     StatusBar,
+    Facebook,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
