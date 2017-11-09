@@ -6,13 +6,13 @@
     <ion-list class="list" inset>
       <ion-item class="label">
         <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
-        <ion-input type="text" placeholder="Enter Username"></ion-input>
+        <ion-input type="text" placeholder="Enter Username" [(ngModel)]="userTest.email"></ion-input>
       </ion-item>
 
 
       <ion-item class="label">
         <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
-        <ion-input type="text" placeholder="Enter Password"></ion-input>
+        <ion-input type="password" placeholder="Enter Password" [(ngModel)]="userTest.password"></ion-input>
       </ion-item>
     </ion-list>
   </div>
@@ -20,11 +20,11 @@
   <p class="text" style="font-family: open-sans; font-size:14px; color:#ebebeb">Forgot yout password ?</p>
 
   <div text-center>
-    <button class="btnWidth" ion-button color="secondary" round [navPush]="nextPage">Login</button>utton>
+    <button class="btnWidth" ion-button color="secondary" round (click)="login(userTest)" type="submit">Login</button>
   </div>
 
   <div text-center>
-    <button class="btnWidth" ion-button color="myWhite" round [navPush]="nextPage">Sign Up</button>utton>
+    <button class="btnWidth" ion-button color="myWhite" round (click)="createAccount()">Sign Up</button>
   </div>
 
   <img src="assets/imgs/facebook.png" class="fb-button">

@@ -13,6 +13,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyDHXPOevL35ZPZx25lrrhMTeMgpmlRv3Bs",
+  authDomain: "labwork5-bfcb8.firebaseapp.com",
+  databaseURL: "https://labwork5-bfcb8.firebaseio.com",
+  projectId: "labwork5-bfcb8",
+  storageBucket: "labwork5-bfcb8.appspot.com",
+  messagingSenderId: "625626025533"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +37,9 @@ import { LoginPage } from '../pages/login/login';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
