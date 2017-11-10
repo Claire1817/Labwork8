@@ -17,6 +17,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { Facebook } from '@ionic-native/facebook'
 
+/* 
+Pierre Munin 1106420
+Claire Gizard 1106363
+ */
+
 var firebaseConfig = {
   apiKey: "AIzaSyDHXPOevL35ZPZx25lrrhMTeMgpmlRv3Bs",
   authDomain: "labwork5-bfcb8.firebaseapp.com",

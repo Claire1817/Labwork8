@@ -4,6 +4,10 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
+/* 
+Pierre Munin 1106420
+Claire Gizard 1106363
+ */
 @Component({
   templateUrl: 'tabs.html'
 })

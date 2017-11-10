@@ -1,23 +1,28 @@
+<!--
+  Pierre Munin 1106420
+  Claire Gizard 1106363
+-->
+
 <ion-content class="bg-image no-scroll" padding>
 
   <img src="assets/imgs/logo.png" class="logo">
 
   <div>
-    <ion-list class="list" inset>
-      <ion-item class="label">
-        <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
-        <ion-input type="text" placeholder="Enter Username" [(ngModel)]="userTest.email"></ion-input>
+    <ion-list inset>
+      <ion-item>
+        <ion-label style="font-size:12px; background-color:transparent" stacked>Username</ion-label>
+        <ion-input class="label" type="text" placeholder="Enter Username" [(ngModel)]="userTest.email"></ion-input>
       </ion-item>
 
 
-      <ion-item class="label">
-        <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
-        <ion-input type="password" placeholder="Enter Password" [(ngModel)]="userTest.password"></ion-input>
+      <ion-item>
+        <ion-label style="font-size:12px; background-color:transparent" stacked>Password</ion-label>
+        <ion-input class="label" type="password" placeholder="Enter Password" [(ngModel)]="userTest.password"></ion-input>
       </ion-item>
     </ion-list>
   </div>
 
-  <p class="text" style="font-family: open-sans; font-size:14px; color:#ebebeb">Forgot yout password ?</p>
+  <p style="font-family: open-sans; font-size:14px; color:#ebebeb; text-align: center">Forgot yout password ?</p>
 
   <div text-center>
     <button class="btnWidth" ion-button color="secondary" round (click)="login(userTest)" type="submit">Login</button>
@@ -27,5 +32,7 @@
     <button class="btnWidth" ion-button color="myWhite" round (click)="createAccount()">Sign Up</button>
   </div>
 
-  <img src="assets/imgs/facebook.png" class="fb-button" (click)="loginWithFacebook()">
+  <div text-center>
+    <img src="assets/imgs/facebook.png" class="fb-button" (click)="loginWithFacebook()">    
+  </div>
 </ion-content>

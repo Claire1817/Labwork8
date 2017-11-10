@@ -6,12 +6,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 
+/* 
+Pierre Munin 1106420
+Claire Gizard 1106363
+ */
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = WelcomePage;
-//  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

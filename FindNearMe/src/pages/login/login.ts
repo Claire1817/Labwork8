@@ -5,7 +5,10 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Facebook } from '@ionic-native/facebook';
 import firebase from 'firebase';
-
+/* 
+Pierre Munin 1106420
+Claire Gizard 1106363
+ */
 
 @IonicPage()
 @Component({
@@ -24,8 +27,7 @@ export class LoginPage {
     this.nav.push('RegisterPage');
   
   }
-
-    
+  
   async login(user: User) {
     
 /**
@@ -47,6 +49,9 @@ export class LoginPage {
     console.log(e);
   }
 }
+/**
+ * function to login with facebook
+ */
   public loginWithFacebook() {
     this.facebook.login(['email']).then( (response) => {
       const facebookCredential = firebase.auth.FacebookAuthProvider
@@ -64,4 +69,5 @@ export class LoginPage {
 
     }).catch((error) => { console.log("ERROR" + error) });
   }
+
 }

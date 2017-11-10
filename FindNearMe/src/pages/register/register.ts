@@ -4,13 +4,10 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs';
 
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+/* 
+Pierre Munin 1106420
+Claire Gizard 1106363
  */
-
 @IonicPage()
 @Component({
   selector: 'page-register',
